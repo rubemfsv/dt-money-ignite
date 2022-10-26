@@ -1,6 +1,9 @@
 import { Container } from "./styles";
+import { useTransactions } from "../../hooks/useTransactions";
 
-export function TransactionsTable() {
+export function TransactionTable() {
+  const { transactions } = useTransactions();
+
   return (
     <Container>
       <table>
@@ -12,6 +15,7 @@ export function TransactionsTable() {
             <th>Data</th>
           </tr>
         </thead>
+
         <tbody>
           {transactions.map((transaction) => {
             return (
